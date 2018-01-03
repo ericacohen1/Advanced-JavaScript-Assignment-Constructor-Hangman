@@ -1,6 +1,6 @@
 // dependency for inquirer npm package
 var inquirer = require("inquirer");
 
-var word = require("./word.js");
-var game = require("./game.js");
-var letter = require("./letter.js");
+var Word = require("./word.js");
+var Game = require("./game.js");
+var Letter = require("./letter.js");

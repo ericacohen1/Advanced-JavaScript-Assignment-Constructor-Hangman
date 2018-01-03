@@ -1,17 +1,60 @@
 var Letter = require("./letter.js");
 
-var Word = function(letters){
+var Word = function (letters) {
     this.letters = letters;
     this.guessedWord = [];
     this.winner = false;
     this.guesses = [];
 
-    this.getLetter = function(){
-        for(var i=0; i<this.letters.length; i++){
+    //gets letter in word
+    this.getLetter = function () {
+        for (var i = 0; i < this.letters.length; i++) {
             var newLetter = new Letter(this.letters[i]);
             this.guessedWord.push(newLetter);
         }
+        console.log(this.guessedWord);
+    }
+
+
+
+    //finds the letter in guesses array
+    this.findLetter = function (guessLetter) {
+        for (var i = 0; i < this.guesses.length; i++) {
+            if (guessLetter === this.guesses[i]) {
+                return true;
+            }
+        }
+        var addLetter = false;
+        
+        this.guesses.push(guessLetter);
+        for(var i=0; i<this.guessedWord.length; i++) {
+            if(this.guessedWord[i].letterAppear(guessLetter)){
+                this.guessedWord[i].showsLetter = true;
+                added = true;
+            }
+        }
+        return added;
+    }
+
+
+    //compares letter input with letter in chosen word
+    this.comparisson = function () {
+        for (var i = 0; i < letterz.length; i++) {
+            if (this.letterz.charAt[i] != this.guessedWord[i].current) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    //displaying info
+    this.display = function () {
+        var stringIsEmpty = "";
+        for (var i = 0; i < this.guessedWord.length; i++) {
+            stringIsEmpty += this.guessedWord[i].current + " ";
+        }
+        return stringIsEmpty;
     }
 }
 
-this.getLetter();
+module.exports = Word;

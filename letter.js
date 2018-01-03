@@ -1,12 +1,12 @@
-var Letter = function(letterz){
+var Letter = function(gameWordLetter){
     //underscores for letters
     this.current = "_";
     //making letters show
-    this.theLetters = letterz;
+    this.theLetter = gameWordLetter;
     this.showsLetter = false;
-    this.letterAppear = function(letter){
-        if(this.theLetters === letter) {
-            this.current = this.theLetters;
+    this.letterAppear = function(userLetter){
+        if(this.theLetter === userLetter) {
+            this.current = this.theLetter;
             return true;
         } 
             return false;
@@ -15,6 +15,7 @@ var Letter = function(letterz){
         return this.current;
     }
 }
+// console.log(Letter);
 
 
 
