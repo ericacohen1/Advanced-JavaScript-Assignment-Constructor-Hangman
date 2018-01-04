@@ -12,7 +12,7 @@ var Word = function (letters) {
             var newLetter = new Letter(this.letters[i]);
             this.guessedWord.push(newLetter);
         }
-        console.log(this.guessedWord);
+        // console.log(this.guessedWord);
     }
 
 
@@ -38,11 +38,12 @@ var Word = function (letters) {
 
 
     //compares letter input with letter in chosen word
-    this.comparisson = function () {
-        for (var i = 0; i < letterz.length; i++) {
-            if (this.letterz.charAt[i] != this.guessedWord[i].current) {
+    this.comparison = function () {
+        for (var i = 0; i < letters.length; i++) {
+            if (this.letters.charAt[i] != this.guessedWord[i].current) {
                 return false;
             }
+            // console.log(comparison);
         }
         return true;
     }
@@ -58,3 +59,7 @@ var Word = function (letters) {
 }
 
 module.exports = Word;
+
+// test code
+// var hi = new Word ("h");
+// hi.comparison();
