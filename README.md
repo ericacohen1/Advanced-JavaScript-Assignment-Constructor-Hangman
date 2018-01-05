@@ -1,5 +1,7 @@
 # Advanced-JavaScript-Assignment-Constructor-Hangman
 
+***note: before beginning the hangman game, npm install inquirer 
+
 Overview
 In this week's assignment, you will create a hangman command-line game using constructor functions.
 
@@ -7,8 +9,6 @@ Instructions
 The completed game should meet the following criteria:
 
 The completed game should be able to receive user input using the inquirer or prompt npm packages.
-
-Feel free to use as many different types of constructor functions as you are able to, but at a minimum, you must create the following constructor functions:
 
 Word: Used to create an object representing the current word the user is attempting to guess. This should contain word specific logic and data.
 

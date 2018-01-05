@@ -10,7 +10,12 @@ var Game = function () {
     this.choseWord.getLetter();
     // console.log(this.choseWord.guessedWord);
     this.guessesRemaining = 12;
+    this.currentWord=null;
+    
 }
+
+var lettersCorrect=[];
+var hangmanDisplay;
 
 var hangman = new Game();
 
@@ -25,16 +30,27 @@ function runGame() {
             console.log(hangman.randoWord);
             // if the user letter is part of the word
             if (hangman.randoWord === answers.userLetterGuess) {
-
+                lettersCorrect.push(answers.userLetterGuess);
+                hangmanDisplay = new Word(Game.currentWord, guessesRemaining);
+                hangmanDisplay.parseDisplay();
             } 
-            // ...
-
+            
             // otherwise keep the underscore and deduct a guess point 
-            // ...
+            
+            else {
+                // guessesRemaining--;
+            }
 
+            // if there are still guesses left then continue game
+
+            // if guessesReamining is 0 end game
+
+
+
+            
             // item represents the current object being looped through in the array.
             // hangman.choseWord.guessedWord.forEach(function (item) {
-                // this object has a item.letterAppear(answers.userLetterGuess) method that will accept an input (user's input) and co  mpare it with the current object's letter value
+                // this object has a item.letterAppear(answers.userLetterGuess) method that will accept an input (user's input) and compare it with the current object's letter value
 
                 // console.log(item);
                 // console.log(item.theLetter);
@@ -51,9 +67,7 @@ function runGame() {
 
                 // answers.userLetterGuess
                 // Word.comparrison
-                //if it is then display letter and say CORRECT
-                //if not then number of guesses left needs to go down and say INCORRECT
-                //if letter is not guessed yet display the underscore from letter.js file 
+        
                 //user wins if user guesses word corectly
                 // if(hangman.choseWord.comparrison === true){
                 //     console.log("you win")
